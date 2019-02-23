@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FormComment from './Components/FormComment/FormComment';
+import CommentForm from './Components/CommentForm/CommentForm';
 
 class App extends Component {
   render() {
@@ -11,7 +11,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           
-          <FormComment/>
+          <CommentForm/>
 
         </header>
       </div>

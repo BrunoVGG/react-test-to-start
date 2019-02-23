@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Comment from './Comment';
+import Comment from './CommentItem';
 import './Style.scss';
 
-class FormComment extends Component {
+class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -81,4 +81,4 @@ class FormComment extends Component {
   }
 }
 
-export default FormComment;
+export default CommentForm;
