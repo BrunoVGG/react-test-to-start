@@ -1,3 +1,6 @@
+
+Simple and personal first test with React. Only to personal usage.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
