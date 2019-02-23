@@ -10,7 +10,6 @@ class CommentItem extends React.Component {
   }
 
   render() {
-
     return (
       <li>
         <div className="commenterImage">

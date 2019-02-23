@@ -46,7 +46,6 @@ class CommentForm extends Component {
   }
 
   render() {
-
     return (
       <div className="App">
         <div className="detailBox">
