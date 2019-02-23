@@ -53,25 +53,25 @@ class CommentForm extends Component {
             <label>Comments</label>
           </div>
           <div className="commentBox">
-            <form onSubmit={this.handleSubmit}>
-            <textarea
-              value={this.state.message} 
-              onChange={this.handleChange}
-              className="form-control"
-            />
             <div className={!this.state.noMessage ? 'hidden' : ''}>
               <div className="alert alert-danger">
                 Say something... =(
               </div>
-             </div>
-             <button className="btn btn-success" type="submit">Send</button>
+            </div>
+            <form onSubmit={this.handleSubmit}>
+              <textarea
+                value={this.state.message} 
+                onChange={this.handleChange}
+                className="form-control"
+              />
+              <button className="btn btn-success" type="submit">Send</button>
             </form> 
           </div>
           <div className="actionBox">
               <ul className="commentList">
-              {this.state.comments.map(function(comment, i){
-                return (<Comment key={i} comment={comment}/>)
-              })} 
+                {this.state.comments.map(function(comment, i){
+                  return (<Comment key={i} comment={comment}/>)
+                })} 
               </ul>
           </div>
       </div>
