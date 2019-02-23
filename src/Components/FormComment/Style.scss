@@ -1,7 +1,19 @@
+$gray-light: #bbb;
+
+.hidden {
+  display: none
+}
+
 .detailBox {
 
-  border:1px solid #bbb;
+  border:1px solid $gray-light;
   margin:50px;
+
+  .alert {
+    margin-top: 10px;
+    font-size: 0.8em;
+    opacity: 0.7;
+  }
 
   .titleBox {
     background-color:#fdfdfd;
@@ -15,7 +27,11 @@
 
   .commentBox {
     padding:10px;
-    border-top:1px dotted #bbb;
+    border-top:1px dotted $gray-light;
+    
+    button {
+      width: 100%
+    }
   
     .form-group {
       &:first-child {
@@ -30,7 +46,7 @@
 
   .actionBox {
 
-    border-top:1px dotted #bbb;
+    border-top:1px dotted $gray-light;
     padding:10px;
 
     .commentList {

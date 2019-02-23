@@ -8,6 +8,7 @@ class FormComment extends Component {
     this.state = {
       message: '',
       comments: [],
+      noMessage: false,
       user: {
         name: 'Bruno Gomes',
         email: 'b.veigagg@gmail.com',
@@ -25,18 +26,23 @@ class FormComment extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    this.setState({noMessage: false});
 
-    const data = new Date();
+    if (this.state.message) {
+      const data = new Date();
     
-    let newComment = {
-      user: this.state.user,
-      message: this.state.message,
-      date: `${data.getDay()}/${data.getMonth()}/${data.getYear()} ${data.getHours()}:${data.getMinutes()}:${data.getSeconds()}`
+      let newComment = {
+        user: this.state.user,
+        message: this.state.message,
+        date: `${data.getDay()}/${data.getMonth()}/${data.getYear()} ${data.getHours()}:${data.getMinutes()}:${data.getSeconds()}`
+      } 
+  
+      this.state.comments.push(newComment);
+      this.setState({comments: this.state.comments});
+      this.state.message = '';
+    } else {
+      this.setState({noMessage: true});
     }
-
-    this.state.comments.push(newComment);
-    this.setState({comments: this.state.comments});
-    this.state.message = '';
   }
 
   render() {
@@ -54,6 +60,11 @@ class FormComment extends Component {
               onChange={this.handleChange}
               className="form-control"
             />
+            <div className={!this.state.noMessage ? 'hidden' : ''}>
+              <div className="alert alert-danger">
+                Say something... =(
+              </div>
+             </div>
              <button className="btn btn-success" type="submit">Send</button>
             </form> 
           </div>
