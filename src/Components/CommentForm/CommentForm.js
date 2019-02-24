@@ -32,6 +32,7 @@ class CommentForm extends Component {
 
     if (this.state.message) {
       let newComment = new Comment(this.state.message, this.state.user);
+      
       this.state.comments.push(newComment);
       
       this.setState({comments: this.state.comments});

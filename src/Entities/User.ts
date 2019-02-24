@@ -5,7 +5,7 @@ export class User {
     public email        : string; 
     public avatar       : string;  
 
-    constructor(user: any) {
+    constructor(user: User) {
         this.id         = 0;
         this.name       = user.name;
         this.email      = user.email;
