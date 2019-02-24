@@ -1,5 +1,6 @@
 $gray-light: #bbb;
 $blue-react: #19c5e2;
+$border-radius: 10px;
 
 .hidden {
   display: none
@@ -17,6 +18,7 @@ $blue-react: #19c5e2;
 
   .titleBox {
     padding:10px;
+    
     label{
       color:$blue-react;
       margin:0;
@@ -28,8 +30,14 @@ $blue-react: #19c5e2;
     padding:10px;
     margin-bottom: 10px;
     
+    textarea {
+      border: 1px solid #bbb;
+      border-radius: 10px 10px 0px 0px;
+    }
+
     button {
-      width: 100%
+      width: 100%;
+      border-radius: 0px 0px 10px 10px;
     }
   }
 
