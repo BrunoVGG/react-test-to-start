@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Comment from './CommentItem';
+import CommentItem from './CommentItem';
 import './Style.scss';
+import {Comment} from '../../Entities/Comments.ts';
 
 class CommentForm extends Component {
   constructor(props) {
@@ -10,6 +11,7 @@ class CommentForm extends Component {
       comments: [],
       noMessage: false,
       user: {
+        id: 1,
         name: 'Bruno Gomes',
         email: 'b.veigagg@gmail.com',
         avatar: 'http://placekitten.com/50/50'
@@ -29,17 +31,18 @@ class CommentForm extends Component {
     this.setState({noMessage: false});
 
     if (this.state.message) {
-      const data = new Date();
-    
-      let newComment = {
-        user: this.state.user,
-        message: this.state.message,
-        date: `${data.getDay()}/${data.getMonth()}/${data.getYear()} ${data.getHours()}:${data.getMinutes()}:${data.getSeconds()}`
-      } 
+      let newComment = new Comment();
+      newComment.message = this.state.message;
+      newComment.user.id = this.state.user.id;
+      newComment.user.name = this.state.user.name;
+      newComment.user.email = this.state.user.email;
+      newComment.user.avatar = this.state.user.avatar;
   
       this.state.comments.push(newComment);
+      
       this.setState({comments: this.state.comments});
-      this.state.message = '';
+      this.setState({message: ''});
+
     } else {
       this.setState({noMessage: true});
     }
@@ -70,7 +73,7 @@ class CommentForm extends Component {
           <div className="actionBox">
               <ul className="commentList">
                 {this.state.comments.map(function(comment, i){
-                  return (<Comment key={i} comment={comment}/>)
+                  return (<CommentItem key={i} comment={comment}/>)
                 })} 
               </ul>
           </div>
