@@ -1,4 +1,5 @@
 $gray-light: #bbb;
+$blue-react: #19c5e2;
 
 .hidden {
   display: none
@@ -6,7 +7,6 @@ $gray-light: #bbb;
 
 .detailBox {
 
-  border:1px solid $gray-light;
   margin:10px;
 
   .alert {
@@ -16,10 +16,9 @@ $gray-light: #bbb;
   }
 
   .titleBox {
-    background-color:#fdfdfd;
     padding:10px;
     label{
-      color:#444;
+      color:$blue-react;
       margin:0;
       display:inline-block;
     }
@@ -27,7 +26,7 @@ $gray-light: #bbb;
 
   .commentBox {
     padding:10px;
-    border-top:1px dotted $gray-light;
+    margin-bottom: 10px;
     
     button {
       width: 100%
@@ -36,7 +35,6 @@ $gray-light: #bbb;
 
   .actionBox {
 
-    border-top:1px dotted $gray-light;
     padding:10px;
 
     .commentList {
@@ -47,6 +45,8 @@ $gray-light: #bbb;
       li {
         margin:0;
         margin-top:10px;
+        padding-top: 10px;
+        border-top:1px dotted $gray-light;
 
         &> div {
           display:table-cell;
