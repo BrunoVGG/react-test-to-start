@@ -48,7 +48,7 @@ class CommentForm extends Component {
       <div className="App">
         <div className="detailBox">
           <div className="titleBox">
-            <label>Comments</label>
+            <h1>Comments Form</h1>
           </div>
           <div className="commentBox">
             <div className={!this.state.noMessage ? 'hidden' : ''}>
