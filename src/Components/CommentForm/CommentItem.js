@@ -21,6 +21,7 @@ class CommentItem extends React.Component {
         <div className="commentText">
             <p className="">{ this.props.comment.message } </p> 
             <span className="date sub-text">
+              { this.props.comment.user.name } 
               on { this.props.comment.date.format('D MMM  YYYY') }
             </span>
         </div>

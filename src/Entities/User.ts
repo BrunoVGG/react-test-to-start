@@ -5,10 +5,10 @@ export class User {
     public email        : string; 
     public avatar       : string;  
 
-    constructor() {
+    constructor(user: any) {
         this.id         = 0;
-        this.name       = '';
-        this.email      = '';
-        this.avatar     = '';
+        this.name       = user.name;
+        this.email      = user.email;
+        this.avatar     = user.avatar;
     }
 }

@@ -3,15 +3,15 @@ import {User} from './User';
 
 export class Comment {
 
-    public id       : number;
-    public message  : string;
-    public date     : Moment; 
-    public user     : User;  
+    public id           : number;
+    public message      : string;
+    public date         : Moment; 
+    public user         : User;  
 
-    constructor() {
+    constructor(message: string, user: User) {
         this.id         = 0;
-        this.message    = '';
+        this.message    = message;
         this.date       = moment();
-        this.user       = new User;
+        this.user       = user;
     }
 }

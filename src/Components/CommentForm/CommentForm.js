@@ -31,13 +31,7 @@ class CommentForm extends Component {
     this.setState({noMessage: false});
 
     if (this.state.message) {
-      let newComment = new Comment();
-      newComment.message = this.state.message;
-      newComment.user.id = this.state.user.id;
-      newComment.user.name = this.state.user.name;
-      newComment.user.email = this.state.user.email;
-      newComment.user.avatar = this.state.user.avatar;
-  
+      let newComment = new Comment(this.state.message, this.state.user);
       this.state.comments.push(newComment);
       
       this.setState({comments: this.state.comments});
